@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:App"
+             mc:Ignorable="d"
+             x:Class="App.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame BackgroundColor="PowderBlue"
+               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame CornerRadius="20" 
+                   IsClippedToBounds="True"
+                       Grid.Column="1">
+                    <Image Source="testingIcon"/>
+                </Frame>
+            </Grid>
+
+        </Frame>
+
+        <Editor Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
+                Placeholder="email" Text="{Binding Mail}"/>
+        <Editor Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                Placeholder="password" Text="{Binding Password}"/>
+        <Editor Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"
+                Placeholder="phone number" Text="{Binding PhoneNumber}"/>
+        <Editor Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"
+                Placeholder="address" Text="{Binding Address}"/>
+        <Editor Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5"
+                Placeholder="age" Text="{Binding Age}"/>
+
+        <Button Grid.Row="6" Grid.Column="1" Text="Zaloguj" Command="{Binding SignIn}"/>
+        <Label Text="{Binding PhoneNumberOutput}" Grid.Row="7" Grid.ColumnSpan="2" 
+               FontSize="18" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding AddressOutput}" Grid.Row="8" Grid.ColumnSpan="2" 
+               FontSize="18" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding AgeOutput}" Grid.Row="9" Grid.ColumnSpan="2" 
+               FontSize="18" HorizontalTextAlignment="Center"/>
+
+    </Grid>
+
+</ContentPage>
