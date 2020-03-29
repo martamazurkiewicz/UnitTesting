@@ -16,7 +16,7 @@ namespace NUnitTests
             string t1 = "213742069";
             test.PhoneNumber = t1;
             test.SignIn.Execute(null);
-            Assert.AreEqual(test.PhoneNumberOutput, t1);
+            Assert.AreEqual(t1, test.PhoneNumberOutput);
         }
     }
 }
