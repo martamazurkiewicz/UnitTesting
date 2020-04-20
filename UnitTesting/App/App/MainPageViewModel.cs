@@ -6,8 +6,14 @@ using Xamarin.Forms;
 
 namespace App
 {
+    /// <summary>
+    /// View Model class for Main Page. Created in compliance with the MVVM standard.
+    /// </summary>
     public class MainPageViewModel : INotifyPropertyChanged
     {
+        /// <summary>
+        /// MainPageViewModel class fields.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         string mail;
         string password;
@@ -19,6 +25,9 @@ namespace App
         string addressOutput;
         string ageOutput;
 
+        /// <summary>
+        /// MainPageViewModel constructor with SignIn lambda function.
+        /// </summary>
         public MainPageViewModel()
         {
             SignIn = new Command(() =>
@@ -29,6 +38,9 @@ namespace App
                 AgeOutput = user.Age == "" ? "42" : user.Age;
             });
         }
+        /// <summary>
+        /// Mail property for handling input - mail given by user.
+        /// </summary>
         public string Mail
         {
             get => mail;
@@ -39,6 +51,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// Password property for handling input - password given by user.
+        /// </summary>
         public string Password
         {
             get => password;
@@ -49,6 +64,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// PhoneNumber property for handling input - phone number given by user.
+        /// </summary>
         public string PhoneNumber
         {
             get
@@ -60,6 +78,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// Address property for handling input - address given by user.
+        /// </summary>
         public string Address
         {
             get
@@ -71,6 +92,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// Age property for handling input - age given by user.
+        /// </summary>
         public string Age
         {
             get
@@ -82,6 +106,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// PhoneNumberOutput property for handling output - phone number used in the app.
+        /// </summary>
         public string PhoneNumberOutput
         {
             get
@@ -93,6 +120,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// AddressOutput property for handling output - user's adderess used in the app.
+        /// </summary>
         public string AddressOutput
         {
             get
@@ -104,6 +134,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// AgeOutput property for handling output - user's age saved in the app.
+        /// </summary>
         public string AgeOutput
         {
             get
@@ -115,6 +148,9 @@ namespace App
                 PropertyChanged?.Invoke(this, args);
             }
         }
+        /// <summary>
+        /// SignIn property used for creating mock users.
+        /// </summary>
         public Command SignIn { get; set; }
     }
 }
